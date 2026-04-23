@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useSocket } from '../context/SocketContext';
 import { useAuth } from '../context/AuthContext';
-import { emitMakeMove, emitForfeitGame } from '../services/socketService';
+import { emitMakeMove, emitForfeitGame, emitFindMatch } from '../services/socketService';
 import GameBoard from '../components/GameBoard'; 
 import GameStatus from '../components/GameStatus'; 
 import "../styles/gameplay.css";
@@ -220,7 +220,14 @@ const GameplayPage: React.FC = () => {
     };
 
     const handlePlayAgain = () => {
-        navigate('/newgame/waiting'); // Navigate back to waiting page
+        if (user) {
+            emitFindMatch({
+                userId: user._id || user.userId,
+                username: user.username,
+                profile_picture_url: user.profile_picture_url,
+            });
+        }
+        navigate('/newgame/waiting');
     };
 
     // --- Render Logic ---

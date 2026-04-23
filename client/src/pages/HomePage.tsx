@@ -85,35 +85,23 @@ const HomePage: React.FC = () => {
   };
 
   return (
- <><div className="background-crowns">
-      <span className="crown crown1">👑</span>
-      <span className="crown crown2">👑</span>
-      <span className="crown crown3">👑</span>
-      <span className="crown crown4">👑</span>
-      <span className="crown crown5">👑</span>
-      <span className="crown crown6">👑</span>
-      <span className="crown crown7">👑</span>
-      <span className="crown crown8">👑</span>
-      <span className="crown crown9">👑</span>
-      <span className="crown crown10">👑</span>
-    </div><div className="container">
-        <h1 className="title">DARBAAR</h1>
-        <div className="stats">Games Played: 0</div>
-        <div className="button-group">
-          <button className="btn btn-primary" onClick={handlePlayClick}>
-            PLAY ANYONE
-          </button>
-          <button className="btn btn-primary" onClick={handlePlayClick}>
-            PLAY FRIENDS
-          </button>
-          <button className="btn btn-secondary" onClick={handlePlayClick}>
-            MY FRIENDS
-          </button>
-          <button className="btn btn-secondary" onClick={handleUpdateProfie}>
-            UPDATE PROFILE
-          </button>
-        </div>
-      </div></>
+    <div className="home-container">
+      <h1 className="home-title">Island Conquest</h1>
+      <div className="home-buttons">
+        <button className="btn btn-primary" onClick={handlePlayClick}>
+          Play Anyone
+        </button>
+        <button className="btn btn-primary" onClick={handlePlayClick}>
+          Play Friends
+        </button>
+        <button className="btn btn-secondary" onClick={handlePlayClick}>
+          My Friends
+        </button>
+        <button className="btn btn-secondary" onClick={handleUpdateProfie}>
+          Update Profile
+        </button>
+      </div>
+    </div>
   );
 };
 
