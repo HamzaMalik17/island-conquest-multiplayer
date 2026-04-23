@@ -30,7 +30,7 @@ const gameSchema = new mongoose.Schema({
   },
   result: { 
     type: String,
-    enum: ['player1_won', 'player2_won', 'draw', 'player1_forfeit', 'player2_forfeit', 'opponent_disconnected'],
+    enum: ['player1_won', 'player2_won', 'draw', 'player1_forfeit', 'player2_forfeit', 'opponent_disconnected', 'player1_disconnect', 'player2_disconnect'],
     required: true,
   },
   winner_id: { 

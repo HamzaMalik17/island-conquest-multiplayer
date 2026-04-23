@@ -6,6 +6,14 @@ import { emitCancelMatchmaking } from '../services/socketService';
 import "../styles/waiting.css"; 
 import "../styles/matchfound.css"; 
 
+interface PlayerInfo {
+    _id?: string;
+    userId?: string;
+    username: string;
+    profilePic?: string;
+    profile_picture_url?: string;
+}
+
 interface OpponentInfo {
     userId: string;
     _id?: string;
